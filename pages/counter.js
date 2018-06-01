@@ -7,13 +7,21 @@ export class Counter extends React.Component {
     this.state = {
       count: 0,
     };
+
+    this.countUp = () => {
+      const { count } = this.state;
+      this.setState({
+        count: count + 1,
+      })
+    }
   }
+
 
   render(){
     const { count } = this.state;
     return (
       <div>
-        <button>Count up</button>
+        <button onClick={this.countUp}>Count up</button>
         <h1>{count}</h1>
       </div>
     );
