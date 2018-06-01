@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 
 export class Index extends React.Component {
