@@ -7,15 +7,36 @@ export class Counter extends React.Component {
     this.state = {
       count: 0,
     };
+
+    this.countUp = () => {
+      const { count } = this.state;
+      this.setState({
+        count: count + 1
+      })
+    }
+
+    this.countDown = () => {
+      const { count } = this.state;
+      this.setState({
+        count: count - 1
+      })
+    }
+
+    this.countClear = () => {
+      const { count } = this.state;
+      this.setState({
+        count: 0
+      })
+    }
   }
 
   render(){
     const { count } = this.state;
     return (
       <div>
-        <button>Count up</button>
-        <button>Count down</button>
-        <button>Clear</button>
+        <button onClick={this.countUp}>Count up</button>
+        <button onClick={this.countDown}>Count down</button>
+        <button onClick={this.countClear}>Clear</button>
         <h1>{count}</h1>
       </div>
     );
